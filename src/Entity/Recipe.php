@@ -18,10 +18,10 @@ class Recipe
     #[ORM\Column(length: 255)]
     private ?string $title = null;
 
-    #[ORM\OneToMany(targetEntity: Instruction::class, mappedBy: 'recipe', orphanRemoval: true)]
+    #[ORM\OneToMany(targetEntity: Instruction::class, mappedBy: 'recipe', cascade: ['persist'], orphanRemoval: true)]
     private Collection $instructions;
 
-    #[ORM\OneToMany(targetEntity: RecipeIngredient::class, mappedBy: 'recipe')]
+    #[ORM\OneToMany(targetEntity: RecipeIngredient::class, mappedBy: 'recipe', cascade: ['persist'])]
     private Collection $recipeIngredients;
 
     public function __construct()
