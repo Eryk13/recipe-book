@@ -133,4 +133,49 @@ a{
     border-bottom: 2px solid transparent;
 }
 
+/* || RECIPE CARD */
 
+.recipe-card{
+    background: var(--color-secondary2);
+    border-radius: .3rem;
+    padding: 1em;
+    margin-top: 1rem;
+    display: block;
+}
+
+.recipe-card:hover{
+    background: var(--color-secondary);
+    cursor: pointer;
+    color: white;
+}
+
+/* || LAYOUT */
+.page-title-wrapper{
+    display: flex;
+    gap: 1rem;
+}
+
+.text-list::after{
+    content: ', ';
+}
+
+.text-list:last-child::after{
+    content: ' ';
+}
+
+/* || BUTTON */
+.btn{
+    border: none;
+    border-radius: .3rem;
+    padding: .5em 1em;
+    align-self:flex-start;
+    margin: auto 0;
+
+}
+
+.btn-primary{
+    background: var(--color-primary);
+}
+.btn-primary:hover{
+    background: var(--color-primary2);
+}
