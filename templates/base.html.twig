@@ -15,6 +15,16 @@
         {% endblock %}
     </head>
     <body>
+        <header class="nav-header">
+            <a class="roboto-black-italic logo">Recipe book</a>
+            <nav class="top-nav">
+                <ul>
+                    <li>
+                        <a class="link" href="{{ path('app_recipe_index') }}">recipes</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
         {% block body %}{% endblock %}
     </body>
 </html>

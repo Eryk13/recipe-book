@@ -1,7 +1,31 @@
+/* || GENERAL */
+
 body {
     font-family: "Roboto", sans-serif;
+    margin: 0;
+    padding: 0 2em;
+    background: var(--color-bg);
 }
 
+ul{
+    padding: 0;
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+/* || VARIABLES */
+
+:root{
+    --color-primary: #bc6c25;
+    --color-primary2: #dda15e;
+    --color-secondary: #283618;
+    --color-secondary2: #606c38;
+    --color-bg: #fefae0;
+
+}
 /* || TYPOGRAPHY */
 
 .roboto-thin {
@@ -75,3 +99,38 @@ body {
     font-weight: 900;
     font-style: italic;
 }
+
+/* || BRANDING */
+
+.logo{
+    font-size: 2rem;
+    color: var(--color-primary);
+}
+
+/* || NAV */
+
+.nav-header {
+    margin: 1rem 0;
+    display: flex;
+}
+
+.nav-header > .logo{
+    margin-right: 2rem;
+}
+
+.top-nav > ul{
+    display: flex;
+}
+
+/* || LINKS */
+
+.link:hover{
+    color: var(--color-secondary2);
+    border-bottom: var(--color-secondary2) 2px solid;
+}
+.link{
+    color: var(--color-secondary);
+    border-bottom: 2px solid transparent;
+}
+
+
