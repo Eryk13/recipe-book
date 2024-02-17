@@ -7,18 +7,18 @@
         data-form-collection-prototype-value="{{ form_widget(form.instructions.vars.prototype)|e('html_attr') }}"
 >
     <ul {{ stimulus_target('form-collection', 'collectionContainer') }}></ul>
-    <button type="button" {{ stimulus_action('form-collection', 'addCollectionElement') }}>Add a tag</button>
+    <button type="button" class="btn btn-primary" {{ stimulus_action('form-collection', 'addCollectionElement') }}>Add instruction</button>
 </div>
 
-
-<h3>Instructions</h3>
+<h3>Ingredients</h3>
 <div {{ stimulus_controller('form-collection') }}
         data-form-collection-index-value="{{ form.recipeIngredients|length > 0 ? form.recipeIngredients|last.vars.name + 1 : 0 }}"
         data-form-collection-prototype-value="{{ form_widget(form.recipeIngredients.vars.prototype)|e('html_attr') }}"
 >
     <ul {{ stimulus_target('form-collection', 'collectionContainer') }}></ul>
-    <button type="button" {{ stimulus_action('form-collection', 'addCollectionElement') }}>Add a tag</button>
+    <button type="button" class="btn btn-primary" {{ stimulus_action('form-collection', 'addCollectionElement') }}>Add ingredient</button>
 </div>
-
-<button type="submit" class="btn btn__primary">{{ button_label|default('Save') }}</button>
+<div class="form__actions">
+    <button type="submit" class="btn btn-primary btn-submit">{{ button_label|default('Save') }}</button>
+</div>
 {{ form_end(form) }}

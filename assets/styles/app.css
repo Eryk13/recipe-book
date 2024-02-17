@@ -2,7 +2,7 @@
 
 body {
     font-family: "Roboto", sans-serif;
-    margin: 0;
+    margin: 0 20rem;
     padding: 0 2em;
     background: var(--color-bg);
 }
@@ -169,12 +169,55 @@ a{
     padding: .5em 1em;
     align-self:flex-start;
     margin: auto 0;
-
+    cursor: pointer;
 }
 
 .btn-primary{
     background: var(--color-primary);
+    font-size: 1rem;
 }
+
 .btn-primary:hover{
     background: var(--color-primary2);
+}
+
+.btn-submit{
+    font-size: 1.1em;
+}
+
+/* || FORM */
+
+.form__actions{
+    margin-top: 1rem;
+    display: flex;
+    justify-content: end;
+    gap: 1rem;
+}
+
+form > div > label{
+    display: block;
+}
+
+form li{
+    margin-top: 1rem;
+}
+
+form h3{
+    margin-top: 2rem;
+}
+
+input{
+    padding: .5em 1em;
+    background: white;
+    border: none;
+    border-bottom: 2px solid var(--color-secondary);
+    font-size: 1rem;
+    margin-top: 1rem;
+    width: 100%;
+}
+
+input:focus{
+    outline: none;
+    border-bottom: 2px solid var(--color-primary2);
+
 }
