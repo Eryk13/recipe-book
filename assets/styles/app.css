@@ -148,6 +148,9 @@ a{
     cursor: pointer;
 }
 
+.recipe-card__title{
+    margin-bottom: 0;
+}
 /* || LAYOUT */
 .page-title-wrapper{
     display: flex;

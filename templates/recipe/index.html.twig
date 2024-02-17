@@ -11,7 +11,7 @@
 
     {% for recipe in recipes %}
             <a class="recipe-card" href="{{ path('app_recipe_show', {id: recipe.id}) }}">
-                <h3>{{ recipe.title }}</h3>
+                <h3 class="recipe-card__title">{{ recipe.title }}</h3>
                 <div>
                 {% for ingredient in recipe.recipeIngredients %}
                     <small class="text-list">{{ ingredient.ingredient.name }}</small>
