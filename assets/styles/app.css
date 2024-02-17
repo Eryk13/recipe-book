@@ -144,9 +144,8 @@ a{
 }
 
 .recipe-card:hover{
-    background: var(--color-secondary);
+    background: var(--color-primary2);
     cursor: pointer;
-    color: white;
 }
 
 /* || LAYOUT */
