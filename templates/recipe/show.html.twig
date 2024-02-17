@@ -3,24 +3,43 @@
 {% block title %}Recipe{% endblock %}
 
 {% block body %}
-    <h1>Recipe</h1>
+    <header class="page-title-wrapper">
+        <h1>{{ recipe.title }}</h1>
+            <a class="btn btn-primary" href="{{ path('app_recipe_edit', {'id': recipe.id}) }}">edit</a>
+            {{ include('recipe/_delete_form.html.twig') }}
+    </header>
+    <div class="recipe-info">
+        <ul class="list">
+            {% for instruction in recipe.instructions %}
+                <li class="list-item">
+                    {{ instruction.orderNumber ~ ". " ~  instruction.text }}
+                </li>
+            {% endfor %}
 
-    <table class="table">
-        <tbody>
+        </ul>
+        <table class="table table-recipe-show">
+            <thead>
             <tr>
-                <th>Id</th>
-                <td>{{ recipe.id }}</td>
+                <th>
+
+                </th>
+                <th>
+                    ingredient
+                </th>
             </tr>
-            <tr>
-                <th>Title</th>
-                <td>{{ recipe.title }}</td>
-            </tr>
-        </tbody>
-    </table>
-
-    <a href="{{ path('app_recipe_index') }}">back to list</a>
-
-    <a href="{{ path('app_recipe_edit', {'id': recipe.id}) }}">edit</a>
-
-    {{ include('recipe/_delete_form.html.twig') }}
+            </thead>
+            <tbody>
+            {% for ingredient in recipe.recipeIngredients %}
+                <tr>
+                    <td>
+                        {{ loop.index ~ '.' }}
+                    </td>
+                    <td>
+                        {{ ingredient.ingredient.name }}
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
 {% endblock %}

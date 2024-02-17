@@ -222,5 +222,36 @@ input{
 input:focus{
     outline: none;
     border-bottom: 2px solid var(--color-primary2);
+}
 
+.delete-form{
+    display: flex;
+    align-items: end;
+}
+
+/* || TABLE */
+
+.table, tr, td, th{
+    border: solid 2px black;
+    border-collapse: collapse;
+}
+
+.table td, th{
+    padding: .5em;
+}
+
+/* || LIST */
+
+.list{
+}
+
+.list-item{
+    margin: 1rem 0;
+
+}
+
+/* || RECIPE SHOW */
+
+.recipe-info{
+    display: flex;
 }

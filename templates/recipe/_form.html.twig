@@ -18,6 +18,7 @@
     <ul {{ stimulus_target('form-collection', 'collectionContainer') }}></ul>
     <button type="button" class="btn btn-primary" {{ stimulus_action('form-collection', 'addCollectionElement') }}>Add ingredient</button>
 </div>
+
 <div class="form__actions">
     <button type="submit" class="btn btn-primary btn-submit">{{ button_label|default('Save') }}</button>
 </div>
