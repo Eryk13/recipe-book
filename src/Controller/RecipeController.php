@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Recipe;
 use App\Form\RecipeType;
+use App\Repository\RecipeIngredientRepository;
 use App\Repository\RecipeRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -69,9 +70,13 @@ class RecipeController extends AbstractController
     }
 
     #[Route('/{id}', name: 'app_recipe_delete', methods: ['POST'])]
-    public function delete(Request $request, Recipe $recipe, EntityManagerInterface $entityManager): Response
+    public function delete(Request $request, Recipe $recipe, EntityManagerInterface $entityManager, RecipeIngredientRepository $recipeIngredientRepository): Response
     {
         if ($this->isCsrfTokenValid('delete'.$recipe->getId(), $request->request->get('_token'))) {
+            $recipeIngredient = $recipeIngredientRepository->findBy(['recipe' => $recipe]);
+            foreach ($recipeIngredient as $item) {
+                $entityManager->remove($item);
+            }
             $entityManager->remove($recipe);
             $entityManager->flush();
         }
